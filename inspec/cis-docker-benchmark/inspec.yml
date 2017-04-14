@@ -1,0 +1,9 @@
+name: cis-docker-benchmark
+title: CIS Docker Benchmark InSpec Profile
+maintainer: Docker, Inc
+copyright: 2017 Docker, Inc
+license: Apache-2.0
+summary: An InSpec Compliance Profile for the CIS Docker Benchmark
+version: 1.13.0
+supports:
+  - os-family: redhat
