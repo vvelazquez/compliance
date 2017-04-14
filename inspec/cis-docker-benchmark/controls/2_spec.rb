@@ -396,5 +396,5 @@ control 'cis-2.24' do
   '
   ref 'CIS Docker 1.13.0 Benchmark - Section 2.24', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
 
-  puts "[NOTE]2.24 - Rotate swarm manager auto-lock key periodically\n\n"
+  puts "[NOTE]2.24 - Rotate swarm manager auto-lock key periodically"
 end

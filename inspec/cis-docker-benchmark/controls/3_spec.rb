@@ -392,3 +392,118 @@ control 'cis-3.15' do
     its('group') { should eq 'docker' }
   end
 end
+
+control 'cis-3.16' do
+  impact 0.7
+  title '3.16 Verify that Docker socket file permissions are set to 660 or more restrictive (Scored)'
+  desc '
+    Verify that the Docker socket file has permissions of ''660'' or more restrictive.
+  '
+  ref 'CIS Docker 1.13.0 Benchmark - Section 3.16', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
+
+  only_if do
+    file('/var/run/docker.sock').exist?
+  end
+
+  describe.one do
+    describe file('/var/run/docker.sock') do
+      it { should exist }
+      its('mode') { should eq 0660 }
+    end
+
+    describe file('/var/run/docker.sock') do
+      it { should exist }
+      its('mode') { should eq 0600 }
+    end
+  end
+end
+
+control 'cis-3.17' do
+  impact 0.7
+  title '3.17 Verify that daemon.json file ownership is set to root:root (Scored)'
+  desc '
+    Verify that the ''daemon.json'' file ownership and group-ownership is correct set to ''root''.
+  '
+  ref 'CIS Docker 1.13.0 Benchmark - Section 3.17', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
+
+  only_if do
+    file('/etc/docker/daemon.json').exist?
+  end
+
+  describe file('/etc/docker/daemon.json') do
+    it { should exist }
+    its('owner') { should eq 'root' }
+    its('group') { should eq 'root' }
+  end
+end
+
+control 'cis-3.18' do
+  impact 0.7
+  title '3.18 Verify that daemon.json file permissions are set to 644 or more restrictive (Scored)'
+  desc '
+    Verify that the ''daemon.json'' file permissions are correctly set to ''644'' or more restrictive.
+  '
+  ref 'CIS Docker 1.13.0 Benchmark - Section 3.18', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
+
+  only_if do
+    file('/etc/docker/daemon.json').exist?
+  end
+
+  describe.one do
+    describe file('/etc/docker/daemon.json') do
+      it { should exist }
+      its('mode') { should eq 0644 }
+    end
+
+    describe file('/etc/docker/daemon.json') do
+      it { should exist }
+      its('mode') { should eq 0600 }
+    end
+  end
+end
+
+control 'cis-3.19' do
+  impact 0.7
+  title '3.19 Verify that /etc/default/docker file ownership is set to root:root (Scored)'
+  desc '
+    Verify that the ''/etc/default/docker'' file ownership and group-ownership is correctly set
+    to ''root''.
+  '
+  ref 'CIS Docker 1.13.0 Benchmark - Section 3.19', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
+
+  only_if do
+    file('/etc/default/docker').exist?
+  end
+
+  describe file('/etc/default/docker') do
+    it { should exist }
+    its('owner') { should eq 'root' }
+    its('group') { should eq 'root' }
+  end
+end
+
+control 'cis-3.20' do
+  impact 0.7
+  title '3.20 Verify that /etc/default/docker file permissions are set to 644 or more restrictive (Scored)'
+  desc '
+    Verify that the ''/etc/default/docker'' file permissions are correctly set to ''644'' or more
+    restrictive.
+  '
+  ref 'CIS Docker 1.13.0 Benchmark - Section 3.20', url: 'https://benchmarks.cisecurity.org/tools2/docker/CIS_Docker_1.13.0_Benchmark_v1.0.0.pdf'
+
+  only_if do
+    file('/etc/default/docker').exist?
+  end
+
+  describe.one do
+    describe file('/etc/default/docker') do
+      it { should exist }
+      its('mode') { should eq 0644 }
+    end
+
+    describe file('/etc/default/docker') do
+      it { should exist }
+      its('mode') { should eq 0600 }
+    end
+  end
+end
