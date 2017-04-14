@@ -1,5 +1,5 @@
 # encoding: utf-8
-# copyright: 2017 Docker, Inc
+# copyright: 2017 Docker, Inc.
 # license: Apache 2.0
 
 title '1 Host Configuration'
