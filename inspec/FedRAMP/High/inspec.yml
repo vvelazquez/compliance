@@ -1,0 +1,12 @@
+name: docker-ee-fedramp-high
+title: Docker EE (Standard/Advanced) InSpec Profile - FedRAMP High Baseline
+maintainer: Docker, Inc.
+copyright: 2017 Docker, Inc.
+license: Apache-2.0
+summary: An InSpec Compliance Profile for Docker EE (Standard/Advanced) at the FedRAMP High Baseline
+version: 17.03
+supports:
+  - os-family: redhat
+depends:
+  - name: docker-ee-fedramp-moderate
+    path: ../Moderate

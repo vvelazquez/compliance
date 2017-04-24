@@ -1,0 +1,12 @@
+name: docker-ee-fedramp-moderate
+title: Docker EE (Standard/Advanced) InSpec Profile - FedRAMP Moderate Baseline
+maintainer: Docker, Inc.
+copyright: 2017 Docker, Inc.
+license: Apache-2.0
+summary: An InSpec Compliance Profile for Docker EE (Standard/Advanced) at the FedRAMP Moderate Baseline
+version: 17.03
+supports:
+  - os-family: redhat
+depends:
+  - name: cis-docker-benchmark
+    git: https://github.com/dev-sec/cis-docker-benchmark.git

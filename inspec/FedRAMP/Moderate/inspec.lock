@@ -1,0 +1,8 @@
+---
+lockfile_version: 1
+depends:
+- name: cis-docker-benchmark
+  resolved_source:
+    git: https://github.com/dev-sec/cis-docker-benchmark.git
+    ref: 2c91ecd377551078f98d38194d2bad1e201022a5
+  version_constraints: ">= 0"
