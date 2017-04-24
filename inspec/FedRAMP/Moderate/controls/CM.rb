@@ -6,7 +6,7 @@ title 'CM - Configuration Management'
 
 include_controls 'cis-docker-benchmark' do
 
-    control 'CM-2' do
+    control 'CM-2-Moderate' do
         impact 1.0
         title 'CM-2 Baseline Configuration'
         desc '    

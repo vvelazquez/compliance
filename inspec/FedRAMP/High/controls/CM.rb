@@ -5,7 +5,7 @@
 title 'CM - Configuration Management'
 
 require_controls 'docker-ee-fedramp-moderate' do
-    control 'CM-2'
+    control 'CM-2-Moderate'
 end
 
 control 'CM-2 (2)' do
