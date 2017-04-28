@@ -15,7 +15,7 @@ control 'CM-2-Moderate' do
     '
     ref 'CM-2 Baseline Configuration', url: 'https://nvd.nist.gov/800-53/Rev4/control/CM-2'
 
-    describe command('echo hello') do
-        its('stdout') { should eq "hello\n" }
-    end
+    # describe command('echo hello') do
+    #     its('stdout') { should eq "hello\n" }
+    # end
 end

@@ -4,9 +4,7 @@
 
 title 'CM - Configuration Management'
 
-require_controls 'docker-ee-fedramp-moderate' do
-    control 'CM-2-Moderate'
-end
+include_controls 'docker-ee-fedramp-moderate'
 
 control 'CM-2 (2)' do
     impact 1.0
@@ -17,8 +15,9 @@ control 'CM-2 (2)' do
         information system.
     '
     ref 'CM-2 (2) BASELINE CONFIGURATION | AUTOMATION SUPPORT FOR ACCURACY / CURRENCY', url: 'https://nvd.nist.gov/800-53/Rev4/control/CM-2#enhancement-2'
-    describe command('echo hello') do
-        its('stdout') { should eq "hello\n" }
-    end
+
+    # describe command('echo hello') do
+    #     its('stdout') { should eq "hello\n" }
+    # end
 end
     
