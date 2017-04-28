@@ -3,7 +3,7 @@ lockfile_version: 1
 depends:
 - name: docker-ee-fedramp-moderate
   resolved_source:
-    path: "/share/FedRAMP/Moderate"
+    path: "/share/Moderate"
   version_constraints: ">= 0"
   dependencies:
   - name: cis-docker-benchmark

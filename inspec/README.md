@@ -4,10 +4,15 @@ From the root of the inspec directory, the profiles below can be executed.
 
 ## FedRAMP
 
-### Moderate Baseline
-
 ```sh
-docker run -it --rm -v $(pwd):/share chef/inspec:latest exec FedRAMP/Moderate -t ssh://user@host -i <private_key> --sudo
+# Build Dockerfile
+docker build -t docker/compliance-inspec-fedramp:latest .
+
+# Moderate baseline
+docker run -it --rm -v <path_to_private_key>:/share/private_key docker/compliance-inspec-fedramp:latest exec Moderate -t ssh://user@host -i /share/private_key --sudo
+
+# High baseline
+docker run -it --rm -v <path_to_private_key>:/share/private_key docker/compliance-inspec-fedramp:latest exec High -t ssh://user@host -i /share/private_key --sudo
 ```
 
 ### High Baseline
