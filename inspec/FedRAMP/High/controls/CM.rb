@@ -16,8 +16,9 @@ control 'CM-2 (2)' do
     '
     ref 'CM-2 (2) BASELINE CONFIGURATION | AUTOMATION SUPPORT FOR ACCURACY / CURRENCY', url: 'https://nvd.nist.gov/800-53/Rev4/control/CM-2#enhancement-2'
 
-    # describe command('echo hello') do
-    #     its('stdout') { should eq "hello\n" }
-    # end
+    output = command('echo Verify against CIS Benchmark').stdout
+    describe(output) do
+        it { should eq "Verify against CIS Benchmark\n" }
+    end
 end
     

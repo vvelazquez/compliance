@@ -7,6 +7,7 @@ summary: An InSpec Compliance Profile for Docker EE (Standard/Advanced) at the F
 version: 17.03
 supports:
   - os-family: redhat
+  - os-name: ubuntu
 depends:
   - name: docker-ee-fedramp-moderate
     path: ../Moderate
