@@ -1,0 +1,2 @@
+FROM chef/inspec
+RUN apk --no-cache add git
